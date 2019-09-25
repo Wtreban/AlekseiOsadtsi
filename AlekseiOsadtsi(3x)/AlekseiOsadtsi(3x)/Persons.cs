@@ -14,6 +14,8 @@ namespace AlekseiOsadtsi_3x_
 
         public ShoppingCart ShoppingCart { get; set; }
 
+        public Color FavouriteColor { get; set; }
+
         public Persons(string firstName,string lastName)
         {
             FirstName = firstName;
@@ -24,5 +26,17 @@ namespace AlekseiOsadtsi_3x_
         {
             return FirstName + " " + LastName;
         }
+    }
+
+    public enum Color
+    {
+        Unknown,
+        Red,
+        Yellow,
+        Green,
+        Blue,
+        Violet,
+        White,
+        Black
     }
 }
