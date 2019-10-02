@@ -8,17 +8,26 @@ namespace Test1
 {
     class Program
     {
-        private static object taRgv18;
+        private static List<Students> newGroup;
+        private static object students;
 
         static void Main(string[] args)
         {
             List<Students> studentslist = new List<Students>
             {
-                new Students("Aleksei", "Petrov", "IsStudying"),
-                new Students("Oleg", "Golovin", "IsStudying"),
-                new Students("Jura", "Ovchiikov", "IsStudying"),
+                new Students("Aleksei", "Petrov"),
+                new Students("Oleg", "Golovin"),
+                new Students("Jura", "Ovchiikov"),
+                new Students("Elena", "Maliweva"),
+                new Students("Darja", "Petrova")
 
             };
+
+            for (int i=0; i < studentslist.Count; i++)
+            {
+                Console.WriteLine($"Students ID: {i + 1}\nName: {studentslist[i].FirstName}" +
+                    $"\nLast name: {studentslist[i].LastName}\nisStudying: {studentslist[i].IsStudying}\n\n/////////////////\n");
+            }
 
             Console.WriteLine("Please enter students name: ");
             string firstName = Console.ReadLine();
@@ -26,18 +35,25 @@ namespace Test1
             Console.WriteLine("Please enter students last name: ");
             string lastName = Console.ReadLine();
 
-            Console.WriteLine("Please enter IsStudying: ");
-            string isstudying = Console.ReadLine();
+            Students stud = new Students(firstName, lastName);
 
-            Students student = new Students(firstName, lastName, isstudying);
+            Console.WriteLine("Enter group name: ");
+            string name = Console.ReadLine();
 
-            Console.WriteLine("Do you want to add "  + firstName  + " " + lastName + " " + "to the group TARgv18 ?");
-            while (Console.ReadLine() == "Y")
+            Group group = new Group(name);
+
+            foreach (var line in studentslist)
             {
-                string tARgv18 = string TARgv18;
-                tARgv18.AddToList(student);
+                group.AddToGroup(line);
             }
-            string TARgv18 = Console.ReadLine();
+
+            Console.WriteLine(group.name);
+
+            foreach (var person in group.newGroup)
+            {
+                Console.WriteLine(person);
+            }
+
         }
     }
 }

@@ -12,15 +12,23 @@ namespace Test1
 
         public string LastName { get; set; }
 
-        public string IsStudying { get; set; }
+        public bool IsStudying { get; set; }
 
-        public TARgv18 TARgv18 { get; set; }
+        public int PersonalCode  { get; set; }
 
-        public Students(string firstName, string lastName, string isstudying)
+        public object Base { get; internal set; }
+        public object Group { get; internal set; }
+
+        public Students(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;
-            IsStudying = isstudying;
+            IsStudying = true;
+        }
+
+        internal object Split(char v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
